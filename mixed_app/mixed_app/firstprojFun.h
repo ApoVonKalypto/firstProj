@@ -1,7 +1,28 @@
 #pragma once
 
 
-int fScan() {
+int fScan(void) {
+
+	int dpi = 0, farbtiefe = 0;
+	float breite = 0, hoehe = 0;
+	double groesse = 0.00;
+	printf("---------- Scan Berechnung ----------\n");
+	printf("Bitte geben die die DPI ein: ");
+	scanf("%i", &dpi);
+
+	printf("Bittegeben die die Farbtiefe ein: ");
+	scanf("%i", &farbtiefe);
+
+	printf("Bittegeben die die Breite in cm ein: ");
+	scanf("%i", &breite);
+
+	printf("Bittegeben die die Hoehe in cm ein: ");
+	scanf("%i", &hoehe);
+	printf("---------- Ausgabe ----------\n");
+	groesse = ((((breite * dpi) / 2.54) * (hoehe * dpi) / 2.54) * farbtiefe) / 8 / 1024 / 1024;
+	
+	printf("Die zu erwartende Dateigr\x94\xE1\e entspricht\n %.4lf MIB\n",groesse);
+	
 	return 0;
 }
 
